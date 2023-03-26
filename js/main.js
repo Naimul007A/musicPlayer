@@ -69,10 +69,6 @@ $(document).ready(function () {
     // for updating the seek slider
     updateTimer = setInterval(seekUpdate, 1000);
 
-    // Move to the next track if the current finishes playing
-    // using the 'ended' event
-    // curr_track.addEventListener("ended", nextTrack());
-
     // Apply a random background color
     random_bg_color();
   }
@@ -118,7 +114,7 @@ $(document).ready(function () {
     // Replace icon with the play icon
     play_Pause.html('<i class="fa fa-play-circle fa-5x"></i>');
   }
-  next_Track.on("click", function nextTrack() {
+  next_Track.on("click", function () {
     // Go back to the first track if the
     // current one is the last in the track list
     if (track_index < track_list.length - 1) track_index += 1;
@@ -128,6 +124,19 @@ $(document).ready(function () {
     loadTrack(track_index);
     playTrack();
   });
+  // Move to the next track if the current finishes playing
+  // using the 'ended' event
+  $(curr_track).on("ended", function () {
+    // Go back to the first track if the
+    // current one is the last in the track list
+    if (track_index < track_list.length - 1) track_index += 1;
+    else track_index = 0;
+
+    // Load and play the new track
+    loadTrack(track_index);
+    playTrack();
+  });
+
   prve_Track.on("click", function () {
     // Go back to the last track if the
     // current one is the first in the track list
