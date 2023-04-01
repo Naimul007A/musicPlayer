@@ -126,3 +126,11 @@ svg.fa-forward-step,
 svg.fa-backward-step {
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  .seekSlider {
+    width: auto;
+  }
+  .volume_slider {
+    width: auto;
+  }
+}
