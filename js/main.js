@@ -25,6 +25,12 @@ $(document).ready(function () {
   // Define the list of tracks that have to be played
   let track_list = [
     {
+      name: "Dishehara Tui",
+      artist: "unknow",
+      image: "https://source.unsplash.com/Qrspubmx6kE/640x360",
+      path: "/music/Dishehara Tui .mp3",
+    },
+    {
       name: "Deshpactio",
       artist: "Broke For Free",
       image: "https://source.unsplash.com/Qrspubmx6kE/640x360",
